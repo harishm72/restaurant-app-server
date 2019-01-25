@@ -4,16 +4,23 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "babel-register": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
+    "cors": "^2.8.5",
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "mongoose": "^4.13.18",
-    "nodemon": "^1.18.9"
+    "joi": "^14.3.1",
+    "mongoose": "^5.4.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.18.9",
+    "babel-register": "^6.26.0",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.2.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./src/start.js"
+    "start": "nodemon --exec babel-node ./src/index.js"
   },
   "author": "",
   "license": "ISC"
