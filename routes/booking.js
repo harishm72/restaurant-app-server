@@ -3,26 +3,25 @@ import userSchema from '../schema/userSchema';
 const  router = express.Router();
 
 router.get('/', (req, res) =>{
-    userSchema.findOne({"userName" : req.get("userName")})
+    userSchema.findOne({"email" : req.get("email")})
         .then(userData => {
             res.send(userData.bookings)
         })
-        .catch(err => res.sendStatus(400).send("Invalid userId"))
+        .catch(err => res.sendStatus(400))
  })
 router.post('/',(req, res) =>{
     let booking = req.body
-    let currentUser = req.get("userName")
+    let currentUser = req.get("email")
         currentUser = "harish";
-        console.log(booking)
         userSchema.findOneAndUpdate({
-            "userName": currentUser
+            "email": currentUser
         }, {
             $push: {
                 "bookings": booking
             }
         })
         .then(res.sendStatus(201))
-        .catch(err => res.sendStatus(500).send(err))
+        .catch(err => res.sendStatus(500))
 
 
 })

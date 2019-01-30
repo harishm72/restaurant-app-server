@@ -13,7 +13,7 @@ router.get('/trending', (req, res) => {
 })
 
 router.get('/:id', (req, res) =>{
-    restaurantModel.findOne({ 'id': req.params.id.toString() }, (err, restaurant) => {
+    restaurantModel.findOne({ '_id': req.params.id.toString() }, (err, restaurant) => {
         if (err) throw err;
         res.send(restaurant)
     })

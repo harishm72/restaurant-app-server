@@ -1,10 +1,17 @@
 import mongoose from 'mongoose';
 
 let userSchema = new mongoose.Schema({
-    "userName": {
+    "displayName": {
         type: String,
         required: true
     },
+    "email" :{
+        type : String,
+        required : true
+    },
+    "paymentMode" : "",
+    "phone" : "",
+    "photoURL" : "",
     "favourites": [],
     "bookings": [],
 }, {
