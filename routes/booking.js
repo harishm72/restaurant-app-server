@@ -12,7 +12,6 @@ router.get('/', (req, res) =>{
 router.post('/',(req, res) =>{
     let booking = req.body
     let currentUser = req.get("email")
-        currentUser = "harish";
         userSchema.findOneAndUpdate({
             "email": currentUser
         }, {
